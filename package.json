@@ -4,18 +4,21 @@
   "description": "Shopping list built with MERN stack",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",  //Install node_mudles inside client
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",  // run server with nodemon 
+    "client": "npm start --prefix client",  // run client 
+    "dev": "concurrently \"npm run server\" \"npm run client\"" // run both client and server at the same time
   },
   "author": "Domas Butrimavicius",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "concurrently": "^4.0.1",
+    "concurrently": "^4.0.1",  // to be able to run server and client at the same time
     "express": "^4.16.4",
     "mongoose": "^5.3.4"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4" // live server feed 
   }
 }
